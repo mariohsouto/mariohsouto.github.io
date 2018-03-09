@@ -1,9 +1,2 @@
 theme: jekyll-theme-minimal
 title: Mario Souto
-
-<figure>
-   <a href="http://jekyllrb.com">
-   <img src="logo.png" style="max-width: 200px;"
-      alt="Jekyll logo" />
-   <figcaption>This is the Jekyll logo</figcaption>
-</figure>
