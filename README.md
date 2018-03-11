@@ -1,13 +1,13 @@
 ## Welcome to GitHub Pages
 
-Teste
+I'm in the final year of my PhD in Electrical Engineering. My Research is mainly in the field of mathematical optimization (combinatorial and convex). For the moment I’m particularly interest in the potential of semidefinite programming. 
 
-You can use the [editor on GitHub](https://github.com/mariohsouto/mariohsouto.github.io/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+Besides research, I have worked on solving many applied problems from different fields such as energy, logistics, telecommunication, education and finance.
 
+<!--
+[comment]: <> (You can use the [editor on GitHub](https://github.com/mariohsouto/mariohsouto.github.io/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
 Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
 ### Markdown
-
 Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 
 ```markdown
@@ -36,4 +36,5 @@ Your Pages site will use the layout and styles from the Jekyll theme you have se
 
 ### Support or Contact
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.)
+-->
