@@ -1,8 +1,6 @@
 ## Biographical Sketch
 
-I'm currently in the final year of my PhD in Electrical Engineering and I'm a research staff member at the [LAMPS lab](http://www.lamps.ind.puc-rio.br) at [PUC-Rio](http://www.puc-rio.br/english/). 
-
-My Research is mainly in the field of mathematical optimization. For the moment I’m particularly interest in the potential of semidefinite programming. 
+I'm currently in the final year of my PhD in Electrical Engineering and I'm a research staff member at the [LAMPS lab](http://www.lamps.ind.puc-rio.br) at [PUC-Rio](http://www.puc-rio.br/english/). My Research is mainly in the field of mathematical optimization. For the moment I’m particularly interest in the potential of semidefinite programming. 
 
 Besides research, I have worked on solving many applied problems from different fields such as energy, logistics, telecommunication, education and finance.
 
