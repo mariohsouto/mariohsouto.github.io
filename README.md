@@ -1,4 +1,4 @@
-### About me
+## About me
 
 I'm currently in the final year of my PhD in Electrical Engineering and I'm a research staff member at the [LAMPS lab](http://www.lamps.ind.puc-rio.br) at [PUC-Rio](http://www.puc-rio.br/english/). 
 
@@ -6,7 +6,7 @@ My Research is mainly in the field of mathematical optimization. For the moment 
 
 Besides research, I have worked on solving many applied problems from different fields such as energy, logistics, telecommunication, education and finance.
 
-### Publications
+## Publications
 
 **ℓ1 Adaptive trend filter via fast coordinate descent** <br/>
 **Mario Souto**, Joaquim D. Garcia and Gustavo C. Amaral <br/>
