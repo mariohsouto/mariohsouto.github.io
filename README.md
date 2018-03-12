@@ -10,7 +10,7 @@ Besides research, I have worked on solving many applied problems from different 
 
 **ℓ1 Adaptive trend filter via fast coordinate descent** <br/>
 **Mario Souto**, Joaquim D. Garcia and Gustavo C. Amaral <br/>
-Sensor Array and Multichannel Signal Processing Workshop (SAM), 2016 IEEE <br/>
+Sensor Array and Multichannel Signal Processing Workshop, 2016 IEEE <br/>
 [[IEEEXplore]](http://ieeexplore.ieee.org/abstract/document/7569706/)
 
 **Adaptive filter for automatic identification of multiple faults in a noisy otdr profile** <br/>
