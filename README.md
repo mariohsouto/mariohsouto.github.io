@@ -1,4 +1,4 @@
-## Biographical Sketch
+## Bio
 
 I'm currently in the final year of my PhD in Electrical Engineering and I'm a research staff member at the [LAMPS lab](http://www.lamps.ind.puc-rio.br) at [PUC-Rio](http://www.puc-rio.br/english/). 
 
