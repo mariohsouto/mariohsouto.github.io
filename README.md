@@ -1,10 +1,8 @@
 ## About me
 
-I'm currently a research scientist intern at Amazon and in the final year of my PhD in Electrical Engineering. I was previously a research staff member at [LAMPS lab](http://www.lamps.ind.puc-rio.br). 
+I'm currently a research scientist intern at Amazon and in the final year of my PhD in Electrical Engineering. I was previously a research staff member at [LAMPS lab](http://www.lamps.ind.puc-rio.br). My Research is mainly in the field of mathematical optimization and machine learning. 
 
-My Research is mainly in the field of mathematical optimization. For the moment I’m particularly interest in the potential of semidefinite programming. 
-
-Besides research, I have worked on solving many applied problems from different fields such as energy, logistics, telecommunication, education and finance.
+Besides research, I have worked on solving many applied problems from different fields such as energy, logistics, telecommunication and finance.
 
 ## Publications
 
