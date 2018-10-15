@@ -1,10 +1,15 @@
 ## About me
 
-I'm currently a research scientist intern at Amazon and in the final year of my PhD in Electrical Engineering. I was previously a research staff member at [LAMPS lab](http://www.lamps.ind.puc-rio.br). My Research is mainly in the field of mathematical optimization and machine learning. 
+I'm currently a research scientist intern at Amazon and pursuing the final year of my PhD in Electrical Engineering. I was previously a research staff member at the [LAMPS lab](http://www.lamps.ind.puc-rio.br). My Research is mainly in the field of mathematical optimization and machine learning. 
 
 Besides research, I have worked on solving many applied problems from different fields such as energy, logistics, telecommunication and finance.
 
 ## Publications
+
+**Exploiting Low-Rank Structure in Semidefinite Programming by Approximate Operator Splitting** <br/>
+**Mario Souto**, Joaquim D. Garcia and Alvaro Veiga <br/>
+Preprint <br/>
+[[arXiv]](https://arxiv.org/pdf/1810.05231.pdf)
 
 **ℓ1 Adaptive trend filter via fast coordinate descent** <br/>
 **Mario Souto**, Joaquim D. Garcia and Gustavo C. Amaral <br/>
