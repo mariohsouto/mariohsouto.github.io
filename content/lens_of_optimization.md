@@ -72,7 +72,7 @@ By putting all together we have the optimization problem
 \end{aligned}\label{eq_inpaint}
 \end{equation}
 \\]
-By the end of this post, we will show how to solve (\ref{eq_inpaint}) with just a few lines of code. For now, just notice that (\ref{eq_inpaint}) is a particular case of (\ref{eq_opt}), the same is true for all the applications mentioned bellow. In order to see how generic and powerful the optimization framework is, let's take a look into some interesting applications.
+By the end of this post, we will show how to solve (\ref{eq_inpaint}) with just a few lines of code. For now, just notice that (\ref{eq_inpaint}) is a particular case of (\ref{eq_opt}), the same is true for all the applications mentioned below. In order to see how generic and powerful the optimization framework is, let's take a look into some interesting applications.
 
 ## Successful applications
 
@@ -148,10 +148,10 @@ problem = cp.Problem(objective, constraints)
 problem.solve(verbose=True, solver=cp.SCS)
 </pre>
 
-As it can be seen, solving a complex problem reduces to a simple and elegant code <label class="margin-toggle sidenote-number"> snippet. As it was previously mentioned, there is no need to especify a particular algorithm or set of instructions.
+As it can be seen, solving a complex problem reduces to a simple and elegant code <label class="margin-toggle sidenote-number"> snippet. As it was previously mentioned, there is no need to specify a particular algorithm or set of instructions.
 </label>
 <span class="sidenote" >
-Thanks to [Steven Diamond](http://web.stanford.edu/~stevend2/) and all CVXPY contributors. </span> To see the effect of the inpaiting method, let's apply it to the image <label class="margin-toggle sidenote-number"> bellow.
+Thanks to [Steven Diamond](http://web.stanford.edu/~stevend2/) and all CVXPY contributors. </span> To see the effect of the inpaiting method, let's apply it to the image <label class="margin-toggle sidenote-number"> below.
 </label>
 <span class="sidenote">
 [Niterói Contemporary Art Museum](https://en.wikipedia.org/wiki/Niter%C3%B3i_Contemporary_Art_Museum) (Museu de Arte Contemporânea de Niterói — MAC).
