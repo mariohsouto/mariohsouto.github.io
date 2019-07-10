@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>The $(I+\lambda \hspace{0.2cm} F)^{-1}$ by Mario Souto</title><link href="https://mariohsouto.github.io/" rel="alternate"></link><link href="https://mariohsouto.github.io/feeds/all.atom.xml" rel="self"></link><id>https://mariohsouto.github.io/</id><updated>2019-07-10T12:00:00+02:00</updated><entry><title>Optimization as a language</title><link href="https://mariohsouto.github.io/opt_language.html" rel="alternate"></link><published>2019-07-10T12:00:00+02:00</published><updated>2019-07-10T12:00:00+02:00</updated><author><name>Mario Souto</name></author><id>tag:mariohsouto.github.io,2019-07-10:/opt_language.html</id><summary type="html">&lt;p&gt;In this first post, the optimization framework is introduced as a powerful tool for solving a wide range of problems.&lt;/p&gt;</summary><content type="html">&lt;p&gt;This post gives an overview of what &lt;strong&gt;optimization&lt;/strong&gt; is and illustrate what kind of problems can be solved by this technology. I hope that by the end of the post, the reader will be motivated by this topic and eager to learn more about it. More importantly, I expect the reader to be willing to try optimization on whatever problem that might be of interest.&lt;/p&gt;
+&lt;p&gt;Before starting, one side note, optimization has several names depending on the audience. The most common aliases are &lt;em&gt;mathematical programming&lt;/em&gt;, &lt;em&gt;decision systems&lt;/em&gt; and &lt;em&gt;operations research&lt;/em&gt;. More recently, if the optimization relies on a considerable amount of data, it has also been framed as &lt;em&gt;machine learning&lt;/em&gt;. As I'm going to highlight through the examples, regardless of the nomenclature, optimization is simply a set of mathematical tools that can be used to solve a wide range of problems. As &lt;label class="margin-toggle sidenote-number"&gt;
+Jagger
+&lt;/label&gt; has previously stated, the nature of the method is more intriguing than its name.
+&lt;span class="sidenote" &gt;
+&lt;em&gt;Pleased to meet you &lt;br&gt;
+Hope you guess my name &lt;br&gt;
+But what's puzzling you &lt;br&gt;
+Is the nature of my game&lt;/em&gt; &lt;br&gt;
+Mick Jagger and Keith Richards. &lt;br&gt; Sympathy for the Devil, Beggars Banquet (1968).
+&lt;span&gt;&lt;/p&gt;
+&lt;p&gt;In a very general form, an optimization problem can be defined as
+\[
+\begin{equation}
+\begin{aligned}
+&amp;amp; \underset{x \in \mathcal{X}}{\text{optimize}}
+&amp;amp; &amp;amp; f(x) \newline
+&amp;amp; \text{subject to}
+&amp;amp;&amp;amp; x \in \mathcal{C}.
+\end{aligned}\label{eq_opt}
+\end{equation}
+\]
+The vector $x$ is called the &lt;em&gt;decision&lt;/em&gt; variable and it usually represents actions or choices one is interested to make. The function $f : \mathcal{X} \rightarrow \mathbb{R}$ is the &lt;em&gt;objective&lt;/em&gt; that associates each $x \in \mathcal{X}$ to a value. If the problem is a &lt;em&gt;minimization&lt;/em&gt; problem, $f$ represents some kind of cost function, on the other hand, if it is a &lt;em&gt;maximization&lt;/em&gt; problem, $f$ represents some sort of profit that needs to be maximized. The set $\mathcal{C}$ represents a group of constraints that the decision variables must satisfy. &lt;/p&gt;
+&lt;p&gt;We can think of optimization as a form of &lt;a href="https://en.wikipedia.org/wiki/Declarative_programming"&gt;&lt;em&gt;declarative programming&lt;/em&gt;&lt;/a&gt;, where we have variables that need to obey specific predefined rules. These rules are denoted as arithmetic expressions over the decision variables, which are the constraints of our optimization problem. This concept is compelling and suggests that one can design algorithms that can deal with a wide range of rules without the need for establishing a control flow for each different problem. In other words, the user describes the problem that needs to be optimized instead of how to solve the problem. &lt;/p&gt;
+&lt;p&gt;To make these concepts more tangible, let's introduce a simple example from image processing.&lt;/p&gt;
+&lt;h3&gt;Image inpainting&lt;/h3&gt;
+&lt;p&gt;Suppose we have a $m \times n$ black and white photograph $X^{\text{true}}$. Additionally, a set of known entries of the image were corrupted. Let's denote the entries that are not damaged by $(i, j) \in \mathcal{T}$. Our goal is to restore the original image through a process called &lt;em&gt;image inpainting&lt;/em&gt; or &lt;em&gt;image interpolation&lt;/em&gt;. In other words, we want to find an image $X$ such that the corrupted entries are reconstructed. This task can be cast as an optimization problem where the restored image $X$ is our decision variable.&lt;/p&gt;
+&lt;p&gt;First of all, we need constraints to ensure that the non-corrupted entries of $X$ and $X^{\text{true}}$ will match. Mathematically, this rule can be expressed as &lt;/p&gt;
+&lt;p&gt;\[
+\begin{equation}
+\begin{aligned}
+&amp;amp; X_{i, j} = X^{\text{true}}_{i, j} \hspace{0.2cm} \forall \hspace{0.2cm} (i, j) \in \mathcal{T}.
+\end{aligned}\label{eq_match}
+\end{equation}\nonumber
+\]&lt;/p&gt;
+&lt;p&gt;The objective function will be to minimize the difference between entries that are adjacent. This can be achieved by minimizing the &lt;em&gt;total variation&lt;/em&gt; of $X$. Where $\textbf{TV} : \mathbb{R}^{m \times n} \rightarrow \mathbb{R}$ is given by
+\[
+\begin{equation}
+\begin{aligned}
+&amp;amp; \textbf{TV}(X) = \sum_{j=1}^{n-1} \sum_{i=1}^{m-1} \begin{Vmatrix}
+X_{i+1, j} - X_{i, j} \newline
+X_{i, j+1} - X_{i, j}
+\end{Vmatrix}_2
+\end{aligned}\label{eq_tv}
+\end{equation}\nonumber
+\]&lt;/p&gt;
+&lt;p&gt;By putting all together we have the optimization problem
+\[
+\begin{equation}
+\begin{aligned}
+&amp;amp; \underset{X}{\text{minimize}}
+&amp;amp; &amp;amp; \textbf{TV}(X) \newline
+&amp;amp; \text{subject to}
+&amp;amp;&amp;amp; X_{i, j} = X^{\text{true}}_{i, j} \hspace{0.2cm} \forall \hspace{0.2cm} (i, j) \in \mathcal{T}.
+\end{aligned}\label{eq_inpaint}
+\end{equation}
+\]
+By the end of this post, we will show how to solve (\ref{eq_inpaint}) with just a few lines of code. For now, just notice that (\ref{eq_inpaint}) is a particular case of (\ref{eq_opt}), the same is true for all the applications mentioned bellow. In order to see how generic and powerful the optimization framework is, let's take a look into some interesting applications.&lt;/p&gt;
+&lt;h2&gt;Successful applications&lt;/h2&gt;
+&lt;p&gt;A field of which optimization has been widely used for decades is logistics. Every time one buys a product online, it is very likely that this information will be the input of an optimization algorithm that will decide which is the best delivery route. For instance, such an algorithm may find the shortest route that obeys constraints such as a delivery time window (without late-night deliveries). This class of problems, known as &lt;em&gt;vehicle routing problems&lt;/em&gt;, is a core technology used in the logistics pipeline. It is important to notice that vehicle routing is just one kind of problem in logistics that is solved using optimization.
+In companies like
+&lt;label class="margin-toggle sidenote-number"&gt;
+Amazon
+&lt;/label&gt;
+&lt;span class="sidenote" &gt;
+In this &lt;a href="https://blog.aboutamazon.com/innovation/how-artificial-intelligence-helps-amazon-deliver"&gt;
+&lt;em&gt;
+blog post
+&lt;/em&gt;
+&lt;/a&gt;
+Russell Allgor (chief scientist at Amazon) explains the use of optimization at Amazon warehouses.
+&lt;/span&gt;
+, optimization is used extensively in problems such as deciding how to optimally pack the boxes into a container, how to best move robots within a fulfillment center, choose the best place to open a new locker delivery store, to name a few.&lt;/p&gt;
+&lt;p&gt;In control theory, optimization has been used for decades with impressive results. The main idea is that we want to control a dynamical systems subject to operational constraints. For example, a self-driving car needs to change lanes very smoothly without resulting in an accident. Another successful case of optimization in control is the landing of the Falcon 9 rocket performed by &lt;label class="margin-toggle sidenote-number"&gt; SpaceX.
+&lt;/label&gt;
+&lt;span class="sidenote" &gt;
+&lt;img src="/images/spacex.gif" alt="Image profile" style="width: 100%; display: block; margin-left: auto; margin-right: auto;"&gt; Açıkmeşe, Behçet, John M. Carson, and Lars Blackmore. &lt;br&gt; &lt;a href="http://www.larsjamesblackmore.com/iee_tcst13.pdf"&gt;"Lossless convexification of nonconvex control bound and pointing constraints of the soft landing optimal control problem."&lt;/a&gt; IEEE Transactions on Control Systems Technology 21.6 (2013): 2104-2113. &lt;/span&gt;
+In this case, one wants to minimize the rocket fuel while making sure that the rocket will land vertically at a specific location. This can be achieved by solving a convex optimization problem by using a technique called &lt;em&gt;lossless convexification&lt;/em&gt;. Such applications have the particularity that the decision needs to be made within a timespan of milliseconds or microseconds. To do so, very efficient embedded optimization algorithms are required. &lt;/p&gt;
+&lt;p&gt;In the field of &lt;em&gt;machine learning&lt;/em&gt;, a great amount of the work done at the &lt;em&gt;training&lt;/em&gt; pipeline is due to optimization. Given a data set, composed of a design matrix $X$ and a target vector $y$, estimating the model parameters can be cast as a minimization problem. In particular, estimating the unkown parameters, denoted by $w$, of a neural network model is equivalent to minimizing a loss function of a series of composite chained functions as in
+\[
+\begin{equation}
+\begin{aligned}
+&amp;amp; \underset{w}{\text{minimize}}
+&amp;amp; &amp;amp; \text{loss}(w, X, y) : = f_k \circ f_{k-1} \circ f_{k-2} \circ \cdots \circ f_1(w, X, y).
+\end{aligned}\label{eq_deep_learning}
+\end{equation}\nonumber
+\]
+If the number of composite functions is sufficiently large, this technique is usually referred to as &lt;em&gt;deep learning&lt;/em&gt; or even &lt;em&gt;artificial intelligence&lt;/em&gt;. &lt;/p&gt;
+&lt;h2&gt;Practitioners point of view&lt;/h2&gt;
+&lt;p&gt;For the great majority of the users, optimization can be treated as a technology that provides an optimal solution given an instance of a problem. This kind of user is more interested in adequately formulating problems rather than which algorithm is going to be used to solve it. From the practitioner point of view, optimization is more of language at which the problem of interest can be properly described. &lt;/p&gt;
+&lt;p&gt;Modeling real-world problems as an optimization problem can be challenging. More recently, the advent of open source modeling languages such as &lt;label class="margin-toggle sidenote-number"&gt;
+&lt;a href="https://www.cvxpy.org/"&gt;CVXPY&lt;/a&gt;
+&lt;/label&gt;
+&lt;span class="sidenote" &gt;
+Diamond, Steven, and Stephen Boyd. &lt;a href="http://www.jmlr.org/papers/volume17/15-408/15-408.pdf"&gt;"CVXPY: A Python-embedded modeling language for convex optimization."&lt;/a&gt; The Journal of Machine Learning Research 17.1 (2016): 2909-2913.
+&lt;/span&gt; and &lt;label class="margin-toggle sidenote-number"&gt;
+&lt;a href="https://github.com/JuliaOpt/JuMP.jl"&gt;JuMP&lt;/a&gt;
+&lt;/label&gt;
+&lt;span class="sidenote" &gt;
+Dunning, Iain, Joey Huchette, and Miles Lubin. &lt;a href="https://arxiv.org/pdf/1508.01982.pdf"&gt;"JuMP: A modeling language for mathematical optimization."&lt;/a&gt; SIAM Review 59.2 (2017): 295-320.
+&lt;/span&gt; has made the deployment of optimization much easier. The goal of these frameworks is to allow the user to model the problem in a high-level fashion while parsing to the solver is done automatically. Even though modeling languages have been around for years, the most recent ones have several advantages over their predecessors. First of all, they are open source. Additionally, they are packages built in general-purpose programming languages like Python or &lt;a href="https://julialang.org/"&gt;Julia&lt;/a&gt;. This property allows to easily integrate optimization software into the backend of different applications and also facilitates the process of teaching optimization for the general public.&lt;/p&gt;
+&lt;h3&gt;Solving image inpainting&lt;/h3&gt;
+&lt;p&gt;To illustrate how easy solving an optimization problem has become, let's return to our first example. As promise let's solve the image inpainting problem (\ref{eq_inpaint}) with just a few lines of code. For this task we will use the CVXPY modeling language along with the open-source solver 
+&lt;label class="margin-toggle sidenote-number"&gt;
+&lt;a href="https://github.com/cvxgrp/scs"&gt;SCS&lt;/a&gt;
+&lt;/label&gt;
+&lt;span class="sidenote" &gt;
+O’Donoghue, Brendan, et al. &lt;a href="https://web.stanford.edu/~boyd/papers/pdf/scs_long.pdf"&gt;"Conic optimization via operator splitting and homogeneous self-dual embedding."&lt;/a&gt; Journal of Optimization Theory and Applications 169.3 (2016): 1042-1068.
+&lt;/span&gt; 
+The Python code for modeling, parsing the problem, calling the solver and retrieving the solution is the following:&lt;/p&gt;
+&lt;pre style='color:#000000;background:#ffffff;'&gt;&lt;span style='color:#7f0055; font-weight:bold; '&gt;import&lt;/span&gt; cvxpy &lt;span style='color:#7f0055; font-weight:bold; '&gt;as&lt;/span&gt; cp
+&lt;span style='color:#3f7f59; '&gt;# Create decision variable.&lt;/span&gt;
+X = cp.Variable(shape=(m, n))
+&lt;span style='color:#3f7f59; '&gt;# Build objective function.&lt;/span&gt;
+objective = cp.Minimize(cp.tv(X))
+&lt;span style='color:#3f7f59; '&gt;# Build the constraints.&lt;/span&gt;
+constraints = [X[i, j] == Xtrue[i, j] &lt;span style='color:#7f0055; font-weight:bold; '&gt;for&lt;/span&gt; (i, j) &lt;span style='color:#7f0055; font-weight:bold; '&gt;in&lt;/span&gt; T]
+&lt;span style='color:#3f7f59; '&gt;# Put all together as one optimization problem.&lt;/span&gt;
+problem = cp.Problem(objective, constraints)
+&lt;span style='color:#3f7f59; '&gt;# Solve the problem using SCS solver.&lt;/span&gt;
+problem.solve(verbose=True, solver=cp.SCS)
+&lt;/pre&gt;
+
+&lt;p&gt;As it can be seen, solving a complex problem reduces to a simple and elegant code &lt;label class="margin-toggle sidenote-number"&gt; snippet. As it was previously mentioned, there is no need to especify a particular algorithm or set of instructions.
+&lt;/label&gt;
+&lt;span class="sidenote" &gt;
+Thanks to &lt;a href="http://web.stanford.edu/~stevend2/"&gt;Steven Diamond&lt;/a&gt; and all CVXPY contributors. &lt;/span&gt; To see the effect of the inpaiting method, let's apply it to the image &lt;label class="margin-toggle sidenote-number"&gt; bellow.
+&lt;/label&gt;
+&lt;span class="sidenote"&gt;
+&lt;a href="https://en.wikipedia.org/wiki/Niter%C3%B3i_Contemporary_Art_Museum"&gt;Niterói Contemporary Art Museum&lt;/a&gt; (Museu de Arte Contemporânea de Niterói — MAC).
+&lt;/span&gt;
+&lt;figure&gt;
+&lt;img src="/images/result_inpainting.jpg"&gt;
+The original image is corrupted by adding the text "This is a corrupted test image. Let's recover the image by solving a total variation minimization problem!". By solving the optimization problem (\ref{eq_inpaint}), the image is recovered with a very good accuracy.
+&lt;/figure&gt;&lt;/p&gt;
+&lt;h2&gt;Suggested links (in progress)&lt;/h2&gt;
+&lt;p&gt;Fortunately, there are tons of available material online about optimization. Here I tried to select a small list that the reader might find interesting. &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://web.stanford.edu/~boyd/"&gt;Stephen P. Boyd&lt;/a&gt; is a spectacular communicator that has two courses and a book freely available. The lectures from &lt;a href="http://web.stanford.edu/class/ee364a/"&gt;Convex optimization I&lt;/a&gt; and his &lt;a href="https://web.stanford.edu/~boyd/cvxbook/"&gt;book&lt;/a&gt; with &lt;a href="http://www.seas.ucla.edu/~vandenbe/"&gt;Lieven Vandenberghe&lt;/a&gt; is, in my opinion, the best starting point to get to know more about optimization. If you decide that you are really into convex optimization, you should also check &lt;a href="http://stanford.edu/class/ee364b/"&gt;Convex optimization II&lt;/a&gt;;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Speaking on &lt;a href="http://www.seas.ucla.edu/~vandenbe/"&gt;Vandenberghe&lt;/a&gt;, three of his courses from UCLA are freely available with excellent lecture notes. They can be found at &lt;a href="http://www.seas.ucla.edu/~vandenbe/ee236a/ee236a.html"&gt;Linear Programming&lt;/a&gt;, &lt;a href="http://www.seas.ucla.edu/~vandenbe/ee236b/ee236b.html"&gt;Convex Optimization&lt;/a&gt; and &lt;a href="http://www.seas.ucla.edu/~vandenbe/ee236c.html"&gt;Optimization Methods for Large-Scale Systems&lt;/a&gt;;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="http://www.stat.cmu.edu/~ryantibs/"&gt;Ryan Tibshirani&lt;/a&gt; also has a great course on &lt;a href="http://www.stat.cmu.edu/~ryantibs/convexopt/"&gt;Convex Optimization&lt;/a&gt;;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://people.eecs.berkeley.edu/~brecht/"&gt;Ben Recht&lt;/a&gt; maintains the &lt;a href="https://www.argmin.net/"&gt;argmin blog&lt;/a&gt; and I would also suggest his talk on &lt;a href="https://simons.berkeley.edu/talks/ben-recht-2013-09-04"&gt;optimization at the Simons Institute&lt;/a&gt;;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The blog &lt;a href="http://www.offconvex.org/"&gt;&lt;em&gt;off the convex path&lt;/em&gt;&lt;/a&gt; maintained by &lt;a href="http://www.cs.princeton.edu/~arora/"&gt;Sanjeev Arora&lt;/a&gt;, &lt;a href="https://mrtz.org/"&gt;Moritz Hardt&lt;/a&gt;, &lt;a href="http://www.cs.yale.edu/homes/vishnoi/Home.html"&gt;Nisheeth Vishnoi&lt;/a&gt; and &lt;a href="http://www.cohennadav.com/"&gt;Nadav Cohen&lt;/a&gt; has a great content and is constantly updated;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="http://sbubeck.com/"&gt;Sébastien Bubeck&lt;/a&gt; also has a great blog called &lt;a href="https://blogs.princeton.edu/imabandit/"&gt;
+&lt;em&gt;I’m a bandit&lt;/em&gt;&lt;/a&gt;. Additionally, his &lt;a href="http://sbubeck.com/Bubeck15.pdf"&gt;book&lt;/a&gt; on convex optimization is an excellent reference on complexity and algorithms;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;If you are into conic optimization, as you should, I highly suggest the &lt;a href="https://themosekblog.blogspot.com/"&gt;MOSEK blog&lt;/a&gt;;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;I also recommend the reader to check &lt;a href="http://fa.bianp.net/"&gt;Fabian Pedregosa blog&lt;/a&gt;;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;To be up to date with the most recent publications I would suggest the reader to check the &lt;a href="https://arxiv.org/list/math.OC/recent"&gt;ArXiv Optimization and Control&lt;/a&gt; as well as the &lt;a href="http://www.optimization-online.org/"&gt;&lt;em&gt;optimization-online&lt;/em&gt;&lt;/a&gt; page frequently.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</content></entry></feed>
