@@ -158,8 +158,9 @@ Thanks to [Steven Diamond](http://web.stanford.edu/~stevend2/) and all CVXPY con
 </span>
 <figure>
 <img src="/images/result_inpainting.jpg">
-The original image is corrupted by adding the text "This is a corrupted test image. Let's recover the image by solving a total variation minimization problem!". By solving the optimization problem (\ref{eq_inpaint}), the image is recovered with a very good accuracy.
 </figure>
+
+The original image is corrupted by adding the text "This is a corrupted test image. Let's recover the image by solving a total variation minimization problem!". By solving the optimization problem (\ref{eq_inpaint}), the image is recovered with a very good accuracy.
 
 ## Suggested links (in progress)
 
