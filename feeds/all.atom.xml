@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>The $(I+\lambda \hspace{0.2cm} F)^{-1}$ by Mario Souto</title><link href="https://mariohsouto.github.io/" rel="alternate"></link><link href="https://mariohsouto.github.io/feeds/all.atom.xml" rel="self"></link><id>https://mariohsouto.github.io/</id><updated>2019-07-10T12:00:00+02:00</updated><entry><title>Optimization as a language</title><link href="https://mariohsouto.github.io/opt_language.html" rel="alternate"></link><published>2019-07-10T12:00:00+02:00</published><updated>2019-07-10T12:00:00+02:00</updated><author><name>Mario Souto</name></author><id>tag:mariohsouto.github.io,2019-07-10:/opt_language.html</id><summary type="html">&lt;p&gt;In this first post, the optimization framework is introduced as a powerful tool for solving a wide range of problems.&lt;/p&gt;</summary><content type="html">&lt;p&gt;This post gives an overview of what &lt;strong&gt;optimization&lt;/strong&gt; is and illustrate what kind of problems can be solved by this technology. I hope that by the end of the post, the reader will be motivated by this topic and eager to learn more about it. More importantly, I expect the reader to be willing to try optimization on whatever problem that might be of interest.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Resolvent by Mario Souto</title><link href="https://mariohsouto.github.io/" rel="alternate"></link><link href="https://mariohsouto.github.io/feeds/all.atom.xml" rel="self"></link><id>https://mariohsouto.github.io/</id><updated>2019-07-10T12:00:00+02:00</updated><entry><title>Optimization as a language</title><link href="https://mariohsouto.github.io/opt_language.html" rel="alternate"></link><published>2019-07-10T12:00:00+02:00</published><updated>2019-07-10T12:00:00+02:00</updated><author><name>Mario Souto</name></author><id>tag:mariohsouto.github.io,2019-07-10:/opt_language.html</id><summary type="html">&lt;p&gt;In this first post, the optimization framework is introduced as a powerful tool for solving a wide range of problems.&lt;/p&gt;</summary><content type="html">&lt;p&gt;This post gives an overview of what &lt;strong&gt;optimization&lt;/strong&gt; is and illustrate what kind of problems can be solved by this technology. I hope that by the end of the post, the reader will be motivated by this topic and eager to learn more about it. More importantly, I expect the reader to be willing to try optimization on whatever problem that might be of interest.&lt;/p&gt;
 &lt;p&gt;Before starting, one side note, optimization has several names depending on the audience. The most common aliases are &lt;em&gt;mathematical programming&lt;/em&gt;, &lt;em&gt;decision systems&lt;/em&gt; and &lt;em&gt;operations research&lt;/em&gt;. More recently, if the optimization relies on a considerable amount of data, it has also been framed as &lt;em&gt;machine learning&lt;/em&gt;. As I'm going to highlight through the examples, regardless of the nomenclature, optimization is simply a set of mathematical tools that can be used to solve a wide range of problems. As &lt;label class="margin-toggle sidenote-number"&gt;
 Jagger
 &lt;/label&gt; has previously stated, the nature of the method is more intriguing than its name.
@@ -56,7 +56,7 @@ X_{i, j+1} - X_{i, j}
 \end{aligned}\label{eq_inpaint}
 \end{equation}
 \]
-By the end of this post, we will show how to solve (\ref{eq_inpaint}) with just a few lines of code. For now, just notice that (\ref{eq_inpaint}) is a particular case of (\ref{eq_opt}), the same is true for all the applications mentioned bellow. In order to see how generic and powerful the optimization framework is, let's take a look into some interesting applications.&lt;/p&gt;
+By the end of this post, we will show how to solve (\ref{eq_inpaint}) with just a few lines of code. For now, just notice that (\ref{eq_inpaint}) is a particular case of (\ref{eq_opt}), the same is true for all the applications mentioned below. In order to see how generic and powerful the optimization framework is, let's take a look into some interesting applications.&lt;/p&gt;
 &lt;h2&gt;Successful applications&lt;/h2&gt;
 &lt;p&gt;A field of which optimization has been widely used for decades is logistics. Every time one buys a product online, it is very likely that this information will be the input of an optimization algorithm that will decide which is the best delivery route. For instance, such an algorithm may find the shortest route that obeys constraints such as a delivery time window (without late-night deliveries). This class of problems, known as &lt;em&gt;vehicle routing problems&lt;/em&gt;, is a core technology used in the logistics pipeline. It is important to notice that vehicle routing is just one kind of problem in logistics that is solved using optimization.
 In companies like
@@ -122,18 +122,18 @@ problem = cp.Problem(objective, constraints)
 problem.solve(verbose=True, solver=cp.SCS)
 &lt;/pre&gt;
 
-&lt;p&gt;As it can be seen, solving a complex problem reduces to a simple and elegant code &lt;label class="margin-toggle sidenote-number"&gt; snippet. As it was previously mentioned, there is no need to especify a particular algorithm or set of instructions.
+&lt;p&gt;As it can be seen, solving a complex problem reduces to a simple and elegant code &lt;label class="margin-toggle sidenote-number"&gt; snippet. As it was previously mentioned, there is no need to specify a particular algorithm or set of instructions.
 &lt;/label&gt;
 &lt;span class="sidenote" &gt;
-Thanks to &lt;a href="http://web.stanford.edu/~stevend2/"&gt;Steven Diamond&lt;/a&gt; and all CVXPY contributors. &lt;/span&gt; To see the effect of the inpaiting method, let's apply it to the image &lt;label class="margin-toggle sidenote-number"&gt; bellow.
+Thanks to &lt;a href="http://web.stanford.edu/~stevend2/"&gt;Steven Diamond&lt;/a&gt; and all CVXPY contributors. &lt;/span&gt; To see the effect of the inpaiting method, let's apply it to the image &lt;label class="margin-toggle sidenote-number"&gt; below.
 &lt;/label&gt;
 &lt;span class="sidenote"&gt;
 &lt;a href="https://en.wikipedia.org/wiki/Niter%C3%B3i_Contemporary_Art_Museum"&gt;Niterói Contemporary Art Museum&lt;/a&gt; (Museu de Arte Contemporânea de Niterói — MAC).
 &lt;/span&gt;
 &lt;figure&gt;
 &lt;img src="/images/result_inpainting.jpg"&gt;
-The original image is corrupted by adding the text "This is a corrupted test image. Let's recover the image by solving a total variation minimization problem!". By solving the optimization problem (\ref{eq_inpaint}), the image is recovered with a very good accuracy.
 &lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;The original image is corrupted by adding the text "This is a corrupted test image. Let's recover the image by solving a total variation minimization problem!". By solving the optimization problem (\ref{eq_inpaint}), the image is recovered with a very good accuracy.&lt;/p&gt;
 &lt;h2&gt;Suggested links (in progress)&lt;/h2&gt;
 &lt;p&gt;Fortunately, there are tons of available material online about optimization. Here I tried to select a small list that the reader might find interesting. &lt;/p&gt;
 &lt;ul&gt;
