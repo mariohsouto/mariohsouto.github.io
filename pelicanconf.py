@@ -3,7 +3,7 @@
 from __future__ import unicode_literals
 
 AUTHOR = u'Mario Souto'
-SITENAME = u'The $(I+\lambda \hspace{0.2cm} F)^{-1}$ by Mario Souto'
+SITENAME = u'Resolvent by Mario Souto'
 SITEURL = ''
 
 PATH = 'content'
