@@ -1,13 +1,13 @@
 Title: Optimization as a language
-Date: 2019-07-10 12:00
+Date: 2019-10-08 12:00
 Category: Optimization
 Slug: opt_language
 Authors: Mario Souto
 Summary: In this first post, the optimization framework is introduced as a powerful tool for solving a wide range of problems.
 
-This post gives an overview of what **optimization** is and illustrate what kind of problems can be solved by this technology. I hope that by the end of the post, the reader will be motivated by this topic and eager to learn more about it. More importantly, I expect the reader to be willing to try optimization on whatever problem that might be of interest.
+This post gives an overview of what **optimization** is and illustrates what kind of problems can be solved by this technology. I hope that by the end of the post, the reader will be motivated by this topic and eager to learn more about it. More importantly, I expect the reader to be willing to try optimization on whatever problem that might be of interest.
 
-Before starting, one side note, optimization has several names depending on the audience. The most common aliases are *mathematical programming*, *decision systems* and *operations research*. More recently, if the optimization relies on a considerable amount of data, it has also been framed as *machine learning*. As I'm going to highlight through the examples, regardless of the nomenclature, optimization is simply a set of mathematical tools that can be used to solve a wide range of problems. As <label class="margin-toggle sidenote-number">
+Before starting, one side note, optimization has several names depending on the audience. The most common aliases are *mathematical programming*, *decision systems*, and *operations research*. More recently, if the optimization relies on a considerable amount of data, it has also been framed as *machine learning*. As I'm going to highlight through the examples, regardless of the terminology, optimization is simply a set of mathematical tools that can be used to solve a wide range of problems. As <label class="margin-toggle sidenote-number">
 Jagger
 </label> has previously stated, the nature of the method is more intriguing than its name.
 <span class="sidenote" >
@@ -37,7 +37,7 @@ To make these concepts more tangible, let's introduce a simple example from imag
 
 ### Image inpainting
 
-Suppose we have a $m \times n$ black and white photograph $X^{\text{true}}$. Additionally, a set of known entries of the image were corrupted. Let's denote the entries that are not damaged by $(i, j) \in \mathcal{T}$. Our goal is to restore the original image through a process called *image inpainting* or *image interpolation*. In other words, we want to find an image $X$ such that the corrupted entries are reconstructed. This task can be cast as an optimization problem where the restored image $X$ is our decision variable.
+Suppose we have a $m \times n$ black and white photograph $X^{\text{true}}$. Additionally, a set of known entries of the image was corrupted. Let's denote the entries that are not damaged by $(i, j) \in \mathcal{T}$. Our goal is to restore the original image through a process called *image inpainting* or *image interpolation*. In other words, we want to find an image $X$ such that the corrupted entries are reconstructed. This task can be cast as an optimization problem where the restored image $X$ is our decision variable.
 
 First of all, we need constraints to ensure that the non-corrupted entries of $X$ and $X^{\text{true}}$ will match. Mathematically, this rule can be expressed as 
 
@@ -95,7 +95,7 @@ In control theory, optimization has been used for decades with impressive result
 </label>
 <span class="sidenote" >
 <img src="/images/spacex.gif" alt="Image profile" style="width: 100%; display: block; margin-left: auto; margin-right: auto;"> Açıkmeşe, Behçet, John M. Carson, and Lars Blackmore. <br> ["Lossless convexification of nonconvex control bound and pointing constraints of the soft landing optimal control problem."](http://www.larsjamesblackmore.com/iee_tcst13.pdf) IEEE Transactions on Control Systems Technology 21.6 (2013): 2104-2113. </span>
-In this case, one wants to minimize the rocket fuel while making sure that the rocket will land vertically at a specific location. This can be achieved by solving a convex optimization problem by using a technique called *lossless convexification*. Such applications have the particularity that the decision needs to be made within a timespan of milliseconds or microseconds. To do so, very efficient embedded optimization algorithms are required. 
+In this case, one wants to minimize the rocket fuel while making sure that the rocket will land vertically at a specific location. This can be achieved by solving a convex optimization problem by using a technique called *lossless convexification*. Such applications have the particularity that the decision needs to be made within a timespan of milliseconds or microseconds. In this case, very efficient embedded optimization algorithms are required. 
 
 In the field of *machine learning*, a great amount of the work done at the *training* pipeline is due to optimization. Given a data set, composed of a design matrix $X$ and a target vector $y$, estimating the model parameters can be cast as a minimization problem. In particular, estimating the unkown parameters, denoted by $w$, of a neural network model is equivalent to minimizing a loss function of a series of composite chained functions as in
 \\[
@@ -110,9 +110,9 @@ If the number of composite functions is sufficiently large, this technique is us
 
 ## Practitioners point of view
 
-For the great majority of the users, optimization can be treated as a technology that provides an optimal solution given an instance of a problem. This kind of user is more interested in adequately formulating problems rather than which algorithm is going to be used to solve it. From the practitioner point of view, optimization is more of language at which the problem of interest can be properly described. 
+For the great majority of the users, optimization can be treated as a technology that provides an optimal solution given an instance of a problem. This kind of user is more interested in adequately formulating problems rather than which algorithm is going to be used to solve it. From the practitioner's point of view, optimization is more of a language at which the problem of interest can be properly described. 
 
-Modeling real-world problems as an optimization problem can be challenging. More recently, the advent of open source modeling languages such as <label class="margin-toggle sidenote-number">
+Modeling real-world problems as an optimization problem can be challenging. More recently, the advent of open-source modeling languages such as <label class=" margin-toggle sidenote-number">
 [CVXPY](https://www.cvxpy.org/)
 </label>
 <span class="sidenote" >
@@ -122,7 +122,7 @@ Diamond, Steven, and Stephen Boyd. ["CVXPY: A Python-embedded modeling language 
 </label>
 <span class="sidenote" >
 Dunning, Iain, Joey Huchette, and Miles Lubin. ["JuMP: A modeling language for mathematical optimization."](https://arxiv.org/pdf/1508.01982.pdf) SIAM Review 59.2 (2017): 295-320.
-</span> has made the deployment of optimization much easier. The goal of these frameworks is to allow the user to model the problem in a high-level fashion while parsing to the solver is done automatically. Even though modeling languages have been around for years, the most recent ones have several advantages over their predecessors. First of all, they are open source. Additionally, they are packages built in general-purpose programming languages like Python or [Julia](https://julialang.org/). This property allows to easily integrate optimization software into the backend of different applications and also facilitates the process of teaching optimization for the general public.
+</span> has made the deployment of optimization much easier. The goal of these frameworks is to allow the user to model the problem in a high-level fashion while parsing to the solver is done automatically. Even though modeling languages have been around for years, the most recent ones have several advantages over their predecessors. First of all, they are open source. Additionally, they are packages built-in general-purpose programming languages like Python or [Julia](https://julialang.org/). This property allows us to easily integrate optimization software into the backend of different applications and also facilitates the process of teaching optimization for the general public.
 
 ### Solving image inpainting
 
@@ -160,7 +160,7 @@ Thanks to [Steven Diamond](http://web.stanford.edu/~stevend2/) and all CVXPY con
 <img src="/images/result_inpainting.jpg">
 </figure>
 
-The original image is corrupted by adding the text "This is a corrupted test image. Let's recover the image by solving a total variation minimization problem!". By solving the optimization problem (\ref{eq_inpaint}), the image is recovered with a very good accuracy.
+The original image is corrupted by adding the text "This is a corrupted test image. Let's recover the image by solving a total variation minimization problem!". By solving the optimization problem (\ref{eq_inpaint}), the image is recovered with very good accuracy.
 
 ## Suggested links (in progress)
 
@@ -176,11 +176,12 @@ Fortunately, there are tons of available material online about optimization. Her
 
 * The blog [*off the convex path*](http://www.offconvex.org/) maintained by [Sanjeev Arora](http://www.cs.princeton.edu/~arora/), [Moritz Hardt](https://mrtz.org/), [Nisheeth Vishnoi](http://www.cs.yale.edu/homes/vishnoi/Home.html) and [Nadav Cohen](http://www.cohennadav.com/) has a great content and is constantly updated;
 
-* [Sébastien Bubeck](http://sbubeck.com/) also has a great blog called [
-*I’m a bandit*](https://blogs.princeton.edu/imabandit/). Additionally, his [book](http://sbubeck.com/Bubeck15.pdf) on convex optimization is an excellent reference on complexity and algorithms;
+* [Sébastien Bubeck](http://sbubeck.com/) also has a great blog called [*I'm a bandit*](https://blogs.princeton.edu/imabandit/). Additionally, his [book](http://sbubeck.com/Bubeck15.pdf) on convex optimization is an excellent reference on complexity and algorithms;
 
 * If you are into conic optimization, as you should, I highly suggest the [MOSEK blog](https://themosekblog.blogspot.com/);
 
 * I also recommend the reader to check [Fabian Pedregosa blog](http://fa.bianp.net/);
 
-* To be up to date with the most recent publications I would suggest the reader to check the [ArXiv Optimization and Control](https://arxiv.org/list/math.OC/recent) as well as the [*optimization-online*](http://www.optimization-online.org/) page frequently.
+* [Tim Vieira blog](https://timvieira.github.io/blog/index.html) is also a great source of interesting topics including optimization;
+
+* To be up to date with the most recent publications, I would suggest the reader check the [ArXiv Optimization and Control](https://arxiv.org/list/math.OC/recent) as well as the [*optimization-online*](http://www.optimization-online.org/) page frequently.

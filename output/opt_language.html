@@ -27,7 +27,7 @@ text-decoration: none;
   <link rel="shortcut icon" href="/static/favicon.ico" />
   <link rel="icon" type="image/png" href="/static/favicon.png" />
   <link href="https://mariohsouto.github.io/" type="application/atom+xml"
-        rel="alternate" title="The $(I+\lambda \hspace{0.2cm} F)^{-1}$ by Mario Souto ALL Atom Feed" />
+        rel="alternate" title="Resolvent by Mario Souto ALL Atom Feed" />
 
   <!-- OpenGraph Info -->
 
@@ -62,7 +62,7 @@ text-decoration: none;
 
 <body>
 <header style="text-decoration:none">
-  <h1 class="websitetitle" style="text-decoration:none"><a style="text-decoration:none" style="text-decoration:none" href="https://mariohsouto.github.io">The $(I+\lambda \hspace{0.2cm} F)^{-1}$ by Mario Souto</a></h1>
+  <h1 class="websitetitle" style="text-decoration:none"><a style="text-decoration:none" style="text-decoration:none" href="https://mariohsouto.github.io">Resolvent by Mario Souto</a></h1>
   <!-- <nav class="navmenu" id="navmenu">
     <li><a style="text-decoration:none" class="navitemlink" href="https://mariohsouto.github.io/archives.html">Archive</a></li>
     <li><a style="text-decoration:none" class="navitemlink" href="https://mariohsouto.github.io/pages/about.html"></a></li>
@@ -85,12 +85,12 @@ text-decoration: none;
 
 <header style="text-decoration:none" class="post-header">
 <h1> <a rel="bookmark" style="text-decoration:none"
-   title="Optimization as a language «The $(I+\lambda \hspace{0.2cm} F)^{-1}$ by Mario Souto»"
+   title="Optimization as a language «Resolvent by Mario Souto»"
    href="https://mariohsouto.github.io/opt_language.html">
    Optimization as a language
 </a>
 </h1>
-<p class="subtitle" style="text-decoration:none"><time datetime="2019-07-10T12:00:00+02:00">Wed 10 July 2019</time><label for="opt_language" class="margin-toggle"> ⊕</label><input type="checkbox" id="opt_language" class="margin-toggle" /><span class="marginnote">Category: <a href="https://mariohsouto.github.io/category/optimization.html">Optimization</a><br />
+<p class="subtitle" style="text-decoration:none"><time datetime="2019-10-08T12:00:00+02:00">Tue 08 October 2019</time><label for="opt_language" class="margin-toggle"> ⊕</label><input type="checkbox" id="opt_language" class="margin-toggle" /><span class="marginnote">Category: <a href="https://mariohsouto.github.io/category/optimization.html">Optimization</a><br />
 </span></p>
 
 <!-- <address class="vcard author">
@@ -98,8 +98,8 @@ text-decoration: none;
 </address>
  -->
 
-</header><p>This post gives an overview of what <strong>optimization</strong> is and illustrate what kind of problems can be solved by this technology. I hope that by the end of the post, the reader will be motivated by this topic and eager to learn more about it. More importantly, I expect the reader to be willing to try optimization on whatever problem that might be of interest.</p>
-<p>Before starting, one side note, optimization has several names depending on the audience. The most common aliases are <em>mathematical programming</em>, <em>decision systems</em> and <em>operations research</em>. More recently, if the optimization relies on a considerable amount of data, it has also been framed as <em>machine learning</em>. As I'm going to highlight through the examples, regardless of the nomenclature, optimization is simply a set of mathematical tools that can be used to solve a wide range of problems. As <label class="margin-toggle sidenote-number">
+</header><p>This post gives an overview of what <strong>optimization</strong> is and illustrates what kind of problems can be solved by this technology. I hope that by the end of the post, the reader will be motivated by this topic and eager to learn more about it. More importantly, I expect the reader to be willing to try optimization on whatever problem that might be of interest.</p>
+<p>Before starting, one side note, optimization has several names depending on the audience. The most common aliases are <em>mathematical programming</em>, <em>decision systems</em>, and <em>operations research</em>. More recently, if the optimization relies on a considerable amount of data, it has also been framed as <em>machine learning</em>. As I'm going to highlight through the examples, regardless of the terminology, optimization is simply a set of mathematical tools that can be used to solve a wide range of problems. As <label class="margin-toggle sidenote-number">
 Jagger
 </label> has previously stated, the nature of the method is more intriguing than its name.
 <span class="sidenote" >
@@ -124,7 +124,7 @@ The vector $x$ is called the <em>decision</em> variable and it usually represent
 <p>We can think of optimization as a form of <a href="https://en.wikipedia.org/wiki/Declarative_programming"><em>declarative programming</em></a>, where we have variables that need to obey specific predefined rules. These rules are denoted as arithmetic expressions over the decision variables, which are the constraints of our optimization problem. This concept is compelling and suggests that one can design algorithms that can deal with a wide range of rules without the need for establishing a control flow for each different problem. In other words, the user describes the problem that needs to be optimized instead of how to solve the problem. </p>
 <p>To make these concepts more tangible, let's introduce a simple example from image processing.</p>
 <h3>Image inpainting</h3>
-<p>Suppose we have a $m \times n$ black and white photograph $X^{\text{true}}$. Additionally, a set of known entries of the image were corrupted. Let's denote the entries that are not damaged by $(i, j) \in \mathcal{T}$. Our goal is to restore the original image through a process called <em>image inpainting</em> or <em>image interpolation</em>. In other words, we want to find an image $X$ such that the corrupted entries are reconstructed. This task can be cast as an optimization problem where the restored image $X$ is our decision variable.</p>
+<p>Suppose we have a $m \times n$ black and white photograph $X^{\text{true}}$. Additionally, a set of known entries of the image was corrupted. Let's denote the entries that are not damaged by $(i, j) \in \mathcal{T}$. Our goal is to restore the original image through a process called <em>image inpainting</em> or <em>image interpolation</em>. In other words, we want to find an image $X$ such that the corrupted entries are reconstructed. This task can be cast as an optimization problem where the restored image $X$ is our decision variable.</p>
 <p>First of all, we need constraints to ensure that the non-corrupted entries of $X$ and $X^{\text{true}}$ will match. Mathematically, this rule can be expressed as </p>
 <p>\[
 \begin{equation}
@@ -175,7 +175,7 @@ Russell Allgor (chief scientist at Amazon) explains the use of optimization at A
 </label>
 <span class="sidenote" >
 <img src="/images/spacex.gif" alt="Image profile" style="width: 100%; display: block; margin-left: auto; margin-right: auto;"> Açıkmeşe, Behçet, John M. Carson, and Lars Blackmore. <br> <a href="http://www.larsjamesblackmore.com/iee_tcst13.pdf">"Lossless convexification of nonconvex control bound and pointing constraints of the soft landing optimal control problem."</a> IEEE Transactions on Control Systems Technology 21.6 (2013): 2104-2113. </span>
-In this case, one wants to minimize the rocket fuel while making sure that the rocket will land vertically at a specific location. This can be achieved by solving a convex optimization problem by using a technique called <em>lossless convexification</em>. Such applications have the particularity that the decision needs to be made within a timespan of milliseconds or microseconds. To do so, very efficient embedded optimization algorithms are required. </p>
+In this case, one wants to minimize the rocket fuel while making sure that the rocket will land vertically at a specific location. This can be achieved by solving a convex optimization problem by using a technique called <em>lossless convexification</em>. Such applications have the particularity that the decision needs to be made within a timespan of milliseconds or microseconds. In this case, very efficient embedded optimization algorithms are required. </p>
 <p>In the field of <em>machine learning</em>, a great amount of the work done at the <em>training</em> pipeline is due to optimization. Given a data set, composed of a design matrix $X$ and a target vector $y$, estimating the model parameters can be cast as a minimization problem. In particular, estimating the unkown parameters, denoted by $w$, of a neural network model is equivalent to minimizing a loss function of a series of composite chained functions as in
 \[
 \begin{equation}
@@ -187,8 +187,8 @@ In this case, one wants to minimize the rocket fuel while making sure that the r
 \]
 If the number of composite functions is sufficiently large, this technique is usually referred to as <em>deep learning</em> or even <em>artificial intelligence</em>. </p>
 <h2>Practitioners point of view</h2>
-<p>For the great majority of the users, optimization can be treated as a technology that provides an optimal solution given an instance of a problem. This kind of user is more interested in adequately formulating problems rather than which algorithm is going to be used to solve it. From the practitioner point of view, optimization is more of language at which the problem of interest can be properly described. </p>
-<p>Modeling real-world problems as an optimization problem can be challenging. More recently, the advent of open source modeling languages such as <label class="margin-toggle sidenote-number">
+<p>For the great majority of the users, optimization can be treated as a technology that provides an optimal solution given an instance of a problem. This kind of user is more interested in adequately formulating problems rather than which algorithm is going to be used to solve it. From the practitioner's point of view, optimization is more of a language at which the problem of interest can be properly described. </p>
+<p>Modeling real-world problems as an optimization problem can be challenging. More recently, the advent of open-source modeling languages such as <label class=" margin-toggle sidenote-number">
 <a href="https://www.cvxpy.org/">CVXPY</a>
 </label>
 <span class="sidenote" >
@@ -198,7 +198,7 @@ Diamond, Steven, and Stephen Boyd. <a href="http://www.jmlr.org/papers/volume17/
 </label>
 <span class="sidenote" >
 Dunning, Iain, Joey Huchette, and Miles Lubin. <a href="https://arxiv.org/pdf/1508.01982.pdf">"JuMP: A modeling language for mathematical optimization."</a> SIAM Review 59.2 (2017): 295-320.
-</span> has made the deployment of optimization much easier. The goal of these frameworks is to allow the user to model the problem in a high-level fashion while parsing to the solver is done automatically. Even though modeling languages have been around for years, the most recent ones have several advantages over their predecessors. First of all, they are open source. Additionally, they are packages built in general-purpose programming languages like Python or <a href="https://julialang.org/">Julia</a>. This property allows to easily integrate optimization software into the backend of different applications and also facilitates the process of teaching optimization for the general public.</p>
+</span> has made the deployment of optimization much easier. The goal of these frameworks is to allow the user to model the problem in a high-level fashion while parsing to the solver is done automatically. Even though modeling languages have been around for years, the most recent ones have several advantages over their predecessors. First of all, they are open source. Additionally, they are packages built-in general-purpose programming languages like Python or <a href="https://julialang.org/">Julia</a>. This property allows us to easily integrate optimization software into the backend of different applications and also facilitates the process of teaching optimization for the general public.</p>
 <h3>Solving image inpainting</h3>
 <p>To illustrate how easy solving an optimization problem has become, let's return to our first example. As promise let's solve the image inpainting problem (\ref{eq_inpaint}) with just a few lines of code. For this task we will use the CVXPY modeling language along with the open-source solver 
 <label class="margin-toggle sidenote-number">
@@ -232,7 +232,7 @@ Thanks to <a href="http://web.stanford.edu/~stevend2/">Steven Diamond</a> and al
 <figure>
 <img src="/images/result_inpainting.jpg">
 </figure></p>
-<p>The original image is corrupted by adding the text "This is a corrupted test image. Let's recover the image by solving a total variation minimization problem!". By solving the optimization problem (\ref{eq_inpaint}), the image is recovered with a very good accuracy.</p>
+<p>The original image is corrupted by adding the text "This is a corrupted test image. Let's recover the image by solving a total variation minimization problem!". By solving the optimization problem (\ref{eq_inpaint}), the image is recovered with very good accuracy.</p>
 <h2>Suggested links (in progress)</h2>
 <p>Fortunately, there are tons of available material online about optimization. Here I tried to select a small list that the reader might find interesting. </p>
 <ul>
@@ -252,8 +252,7 @@ Thanks to <a href="http://web.stanford.edu/~stevend2/">Steven Diamond</a> and al
 <p>The blog <a href="http://www.offconvex.org/"><em>off the convex path</em></a> maintained by <a href="http://www.cs.princeton.edu/~arora/">Sanjeev Arora</a>, <a href="https://mrtz.org/">Moritz Hardt</a>, <a href="http://www.cs.yale.edu/homes/vishnoi/Home.html">Nisheeth Vishnoi</a> and <a href="http://www.cohennadav.com/">Nadav Cohen</a> has a great content and is constantly updated;</p>
 </li>
 <li>
-<p><a href="http://sbubeck.com/">Sébastien Bubeck</a> also has a great blog called <a href="https://blogs.princeton.edu/imabandit/">
-<em>I’m a bandit</em></a>. Additionally, his <a href="http://sbubeck.com/Bubeck15.pdf">book</a> on convex optimization is an excellent reference on complexity and algorithms;</p>
+<p><a href="http://sbubeck.com/">Sébastien Bubeck</a> also has a great blog called <a href="https://blogs.princeton.edu/imabandit/"><em>I'm a bandit</em></a>. Additionally, his <a href="http://sbubeck.com/Bubeck15.pdf">book</a> on convex optimization is an excellent reference on complexity and algorithms;</p>
 </li>
 <li>
 <p>If you are into conic optimization, as you should, I highly suggest the <a href="https://themosekblog.blogspot.com/">MOSEK blog</a>;</p>
@@ -262,7 +261,10 @@ Thanks to <a href="http://web.stanford.edu/~stevend2/">Steven Diamond</a> and al
 <p>I also recommend the reader to check <a href="http://fa.bianp.net/">Fabian Pedregosa blog</a>;</p>
 </li>
 <li>
-<p>To be up to date with the most recent publications I would suggest the reader to check the <a href="https://arxiv.org/list/math.OC/recent">ArXiv Optimization and Control</a> as well as the <a href="http://www.optimization-online.org/"><em>optimization-online</em></a> page frequently.</p>
+<p><a href="https://timvieira.github.io/blog/index.html">Tim Vieira blog</a> is also a great source of interesting topics including optimization;</p>
+</li>
+<li>
+<p>To be up to date with the most recent publications, I would suggest the reader check the <a href="https://arxiv.org/list/math.OC/recent">ArXiv Optimization and Control</a> as well as the <a href="http://www.optimization-online.org/"><em>optimization-online</em></a> page frequently.</p>
 </li>
 </ul>
 </article>
