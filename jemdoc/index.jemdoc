@@ -1,68 +1,35 @@
-# jemdoc: menu{MENU}{index.html}
+
 # jemdoc: addcss{slideshow.css}
 ~~~
 {}{table}{TABLE_HOME_HEAD}
-{{<img class="float" style="width: 100px; margin-left:-15px; margin-top: 13px;" src="images/logo.jpg"></img>}}
-{{<h1 style="padding-bottom: 22px; margin-bottom: 0.3em; margin-top: 5px;">Website Name <span style = "display: block; padding-top: 10px; color: black; font-weight: normal;">More information but within the line-size limit.</span></h1>}}
+{{<h1 style="padding-bottom: 10px; margin-bottom: 0.1em; margin-top: 5px;">Mario Souto }}
 ~~~
 
-Some information about this website and the purpose of it.
-
 ~~~
-{}{raw}
-<div class="slideshow-container" style="text-align:center">
-    <div class="mySlides fade">
-        <div class="numbertext">1 / 3</div>
-        <img src="images/home_photo1.jpg" style="width:70%">
-        <div class="text">Home photo 1</div>
-    </div>
+{}{img_left}{images/mario_souto_profile.jpeg}{alt text}{200}{200}{IMGLINKTARGET}
+\n
 
-    <div class="mySlides fade">
-        <div class="numbertext">2 / 3</div>
-        <img src="images/home_photo2.jpg" style="width:70%">
-        <div class="text">Home photo 2</div>
-    </div>
+I'm an engineer building in the intersection of AI, control and optimization. \n \n
 
-    <div class="mySlides fade">
-        <div class="numbertext">3 / 3</div>
-        <img src="images/home_photo3.jpg" style="width:70%">
-        <div class="text">Home photo 3</div>
-    </div>
-</div>
+In the past years, I have been dedicated to making renewable energy and battery storage smarter. \n \n
 
-<br />
-
-<div style="text-align:center">
-    <span class="dot"></span> 
-    <span class="dot"></span> 
-    <span class="dot"></span> 
-</div>
-
-<script>
-    var slideIndex = 0;
-    showSlides();
-    function showSlides() {
-        var i;
-        var slides = document.getElementsByClassName("mySlides");
-        var dots = document.getElementsByClassName("dot");
-        for (i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";  
-        }
-        slideIndex++;
-        if (slideIndex > slides.length) {slideIndex = 1}    
-        for (i = 0; i < dots.length; i++) {
-            dots[i].className = dots[i].className.replace(" active", "");
-        }
-        slides[slideIndex-1].style.display = "block";  
-        dots[slideIndex-1].className += " active";
-        setTimeout(showSlides, 3500); // Change image every 2 seconds
-    }
-</script>
+For more info check out my [https://www.linkedin.com/in/mario-souto/ LinkedIn], [https://twitter.com/mariohsouto Twitter] and [https://github.com/mariohsouto Github]. \n \n
 ~~~
 
+== Contact
 
-== News
-~~~
-{}{raw}
-<iframe src="rss/news.html" style="border-width:0; border-style:none;" height="800px" width="100%" scrolling="yes"></iframe>
-~~~
+\n
+<my-first-name> h <my-last-name> at gmail dot com \n
+
+== Open Source
+
+- [https://github.com/mariohsouto/ProxSDP.jl ProxSDP] : Semidefinite Programming (SDP) optimization solver based on the paper [https://arxiv.org/pdf/1810.05231.pdf "Exploiting Low-Rank Structure in Semidefinite Programming by Approximate Operator Splitting"].
+- [https://github.com/LAMPSPUC/StateSpaceModels.jl StateSpaceModel.jl] : Julia package for modeling, forecasting, and simulating time series in a state-space framework.
+
+== Research Papers
+
+- Souto, Mario, Joaquim D. Garcia, and Álvaro Veiga. [https://arxiv.org/pdf/1810.05231.pdf "Exploiting low-rank structure in semidefinite programming by approximate operator splitting."] Optimization.
+- Souto, Mario, et al. [https://www.researchgate.net/profile/Alvaro-Veiga/publication/270568324_A_high-dimensional_VARX_model_to_simulate_monthly_renewable_energy_supply/links/54ad5f6c0cf24aca1c6f2759/A-high-dimensional-VARX-model-to-simulate-monthly-renewable-energy-supply.pdf "A high-dimensional VARX model to simulate monthly renewable energy supply."] 2014 Power Systems Computation Conference. IEEE, 2014.
+- Saavedra, Raphael, Guilherme Bodin, and Mario Souto. [https://arxiv.org/pdf/1908.01757.pdf "StateSpaceModels. jl: A julia package for time-series analysis in a state-space framework."] arXiv preprint.
+- Von der Weid, J. P., Souto, M. H., Garcia, J. D., & Amaral, G. C. [https://arxiv.org/pdf/1602.04379.pdf "Adaptive filter for automatic identification of multiple faults in a noisy OTDR profile."] Journal of Lightwave Technology.
+- Souto, Mario, Joaquim D. Garcia, and Gustavo C. Amaral. [https://arxiv.org/pdf/1603.03799.pdf "ℓ1 Adaptive trend filter via fast coordinate descent."] 2016 IEEE Sensor Array And Multichannel Signal Processing Workshop
