@@ -2,7 +2,7 @@
 # jemdoc: addcss{slideshow.css}
 ~~~
 {}{table}{TABLE_HOME_HEAD}
-{{<h1 style="padding-bottom: 10px; margin-bottom: 0.1em; margin-top: 5px;">Mario Souto }}
+{{<h1 style="padding-bottom: 10px; margin-bottom: 0.1em; margin-top: 5px;"> / &nbsp; Mario Souto }}
 ~~~
 
 ~~~
@@ -16,17 +16,17 @@ In the past years, I have been dedicated to making renewable energy and battery 
 For more info check out my [https://www.linkedin.com/in/mario-souto/ LinkedIn], [https://twitter.com/mariohsouto Twitter] and [https://github.com/mariohsouto Github]. \n \n
 ~~~
 
-== Contact
+== / ~ Contact
 
 \n
 <my-first-name> h <my-last-name> at gmail dot com \n
 
-== Open Source
+== / ~ Open Source
 
-- [https://github.com/mariohsouto/ProxSDP.jl ProxSDP] : Semidefinite Programming (SDP) optimization solver based on the paper [https://arxiv.org/pdf/1810.05231.pdf "Exploiting Low-Rank Structure in Semidefinite Programming by Approximate Operator Splitting"].
+- [https://github.com/mariohsouto/ProxSDP.jl ProxSDP] : Semidefinite Programming (SDP) optimization solver.
 - [https://github.com/LAMPSPUC/StateSpaceModels.jl StateSpaceModel.jl] : Julia package for modeling, forecasting, and simulating time series in a state-space framework.
 
-== Research Papers
+== / ~ Research Papers
 
 - Souto, Mario, Joaquim D. Garcia, and Álvaro Veiga. [https://arxiv.org/pdf/1810.05231.pdf "Exploiting low-rank structure in semidefinite programming by approximate operator splitting."] Optimization.
 - Souto, Mario, et al. [https://www.researchgate.net/profile/Alvaro-Veiga/publication/270568324_A_high-dimensional_VARX_model_to_simulate_monthly_renewable_energy_supply/links/54ad5f6c0cf24aca1c6f2759/A-high-dimensional-VARX-model-to-simulate-monthly-renewable-energy-supply.pdf "A high-dimensional VARX model to simulate monthly renewable energy supply."] 2014 Power Systems Computation Conference. IEEE, 2014.

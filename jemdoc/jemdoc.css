@@ -183,7 +183,7 @@ tt {
 }
 
 pre, tt {
-	font-size: 90%;
+	font-size: 100%;
 	font-family: monaco, monospace;
 }
 
@@ -201,7 +201,7 @@ a:hover {
 	border-bottom: 1px gray solid;
 }
 #layout-menu a:link, #layout-menu a:visited, #layout-menu a:hover {
-	color: #527bbd;
+	color: #000000;
 	text-decoration: none;
 }
 #layout-menu a:hover {
@@ -249,17 +249,18 @@ strong {
 
 
 h1, h2, h3 {
-	color: #527bbd;
+	color: #000000;
 	margin-top: 0.7em;
 	margin-bottom: 0.3em;
 	padding-bottom: 0.2em;
 	line-height: 1.0;
 	padding-top: 0.5em;
 	border-bottom: 1px solid #aaaaaa;
+	font-family:monospace;
 }
 
 h1 {
-	font-size: 165%;
+	font-size: 200%;
 }
 
 h2 {
