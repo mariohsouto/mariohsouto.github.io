@@ -25,7 +25,6 @@ PHDOCS=$(addprefix html/, $(HDOCS))
 all : $(PHDOCS)
 	rm -f html/*.jemdoc
 	cp -f -r ./jemdoc/images ./html
-	cp -f -r ./jemdoc/rss ./html
 	cp -f -r ./eqs ./html | true
 	@echo "Website building is complete !"
 
@@ -68,9 +67,6 @@ publishall :
 	$(eval USERNAME ?= $(shell read -p "FTP Username: " pwd; echo $$pwd))
 	$(eval PASSWORD ?= $(shell read -p "FTP Password: " pwd; echo $$pwd))
 	$(MAKE) pull
-	lftp -e "set ftp:ssl-allow no; set xfer:clobber on; get /rss/news.rss; exit" -u $(USERNAME),$(PASSWORD) $(ftp_site)
-	cp news.rss ./news_bkp/$(shell date --iso=seconds).rss	
-	mv news.rss ./html/rss/
 	$(MAKE) push -i
 	$(MAKE) all	
 	lftp -e "set ftp:ssl-allow no; mirror -Rne ./$(FTP_MIRROR_PATH) /; exit" -u $(USERNAME),$(PASSWORD) $(ftp_site)
