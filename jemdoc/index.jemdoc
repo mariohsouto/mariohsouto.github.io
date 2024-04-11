@@ -7,19 +7,17 @@
 
 ~~~
 {}{img_left}{./images/mario_souto_profile.jpeg}{alt text}{200}{200}{IMGLINKTARGET}
-\n
 
-I'm an engineer building at the intersection of AI, control and optimization. \n \n
+I'm an engineer specializing in AI, control, and optimization, with a focus on enhancing energy systems and battery storage. After earning my PhD in Electrical Engineering, I worked at AWS, where I developed AI models to optimize Amazon's renewable energy portfolio. I was the tech lead for the Renewable Energy Optimization (REO) team, and the technology I developed contributed to Amazon becoming one of the world's largest corporate buyers of renewable energy. Later, I was the tech lead at Equilibrium Energy, where I developed and deployed grid-scale battery control and optimization algorithms.
 
-In the past years, I have been dedicated to making renewable energy and battery storage smarter. \n \n
-
-For more info check out my [https://www.linkedin.com/in/mario-souto/ LinkedIn], [https://twitter.com/mariohsouto Twitter], [https://github.com/mariohsouto Github], and [https://scholar.google.com.br/citations?user=Hzfx4RwAAAAJ&hl=en Google Scholar]. \n \n
+During my PhD, I created a novel algorithm and solver for Semidefinite Programming problems, a somewhat exotic subset of convex optimization problems. Since then, my research has revolved around model predictive control, optimization algorithms, and machine learning.
 ~~~
 
 ==  ~ Contact
 
-\n
-<my-first-name> h <my-last-name> at gmail dot com \n
+[https://www.linkedin.com/in/mario-souto/ LinkedIn] - [https://twitter.com/mariohsouto Twitter] - [https://github.com/mariohsouto Github] - [https://scholar.google.com.br/citations?user=Hzfx4RwAAAAJ&hl=en Google Scholar]
+
+<my-first-name> h <my-last-name> at gmail dot com 
 
 ==  ~ Open Source
 
