@@ -1,7 +1,3 @@
-.caps {font-size:.92em; text-decoration: none; }
-.amp {text-decoration: none; color:#666; font-size:1.05em;font-family:"Warnock Pro", "Goudy Old Style","Palatino","Book Antiqua",serif; font-style:italic;}    
-.dquo {text-decoration: none; margin-left:-.38em;}
-
-a {
-    text-decoration: none !important; 
-  }
+.caps {font-size:.92em;}
+.amp {color:#666; font-size:1.05em;font-family:"Warnock Pro", "Goudy Old Style","Palatino","Book Antiqua",serif; font-style:italic;}    
+.dquo {margin-left:-.38em;}
