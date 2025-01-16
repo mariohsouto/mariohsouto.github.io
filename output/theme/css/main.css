@@ -35,6 +35,13 @@ footer {
      max-width: 800px; /* Optional: Limit the width */
      text-align: center; /* Center text (optional) */
  }
+ body {
+     width: 75%;
+     max-width: 1400px;
+     margin: 0 auto;
+     padding: 0;
+     box-sizing: border-box;
+   }
 
 /* Imports */
 @import url("pygment.css");
