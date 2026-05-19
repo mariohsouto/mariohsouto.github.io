@@ -181,16 +181,6 @@ sup.fn-ref a { text-decoration: none; }
 
 .fn-back:hover { color: #111; }
 
-hr.section-break { border: none;
-                   text-align: center;
-                   margin: 2.5rem auto;
-                   width: 100%; }
-
-hr.section-break::after { content: "❦";
-                          color: #aaa;
-                          font-size: 1.1rem;
-                          letter-spacing: 1em;
-                          padding-left: 1em; }
 
 
 p > figure { padding: 0;
