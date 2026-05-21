@@ -6,7 +6,7 @@ Slug: about
 Author: Mario Souto
 Summary: Short version for index and feeds
 
-Mario is the CTO and co-founder of Soma Energy, a technology company that builds AI systems to optimize energy assets — including storage, generators, and controllable loads.
+Mario Souto is CTO and cofounder of Soma Energy, a company building the orchestration layer between energy and AI compute. Soma coordinates across storage, generation, grid signals, and workload demand to maximize the value of tokens produced per joule of energy consumed.
 
 Before Soma, Mario worked at AWS developing AI models to optimize Amazon's energy projects. As a research scientist, he helped Amazon successfully manage one of the world's largest renewable energy portfolios. Later, as tech lead at Equilibrium Energy, he developed high-performance optimization algorithms for grid-scale batteries.
 
