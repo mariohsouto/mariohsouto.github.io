@@ -142,7 +142,17 @@ a.navitemlink:hover { color: #555; }
                   width: 100%;
                   height: auto; }
 
-@media screen and (max-width: 760px) { .essay-hero { width: 90%; } }
+/* Phones: use the full screen width for the text column */
+@media screen and (max-width: 760px) {
+     body { width: auto;
+            padding: 0 1.25rem; }
+     p, ol, ul, .essay-hero { width: 100%; }
+     h1 { font-size: 2rem;
+          line-height: 1.15; }
+     h2 { font-size: 1.7rem;
+          line-height: 1.15; }
+     .references li { padding-left: 1.8rem; }
+}
 
 sup.fn-ref { font-size: 0.75rem;
              line-height: 0;
