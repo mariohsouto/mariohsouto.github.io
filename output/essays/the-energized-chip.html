@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-3V2LVXYXND"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-3V2LVXYXND');
+  </script>
+  <meta charset="utf-8" />
+  <title>The Energized Chip — Mario Souto</title>
+  <meta name="author" content="Mario Souto" />
+  <meta name="description" content="AI companies are becoming industrial firms whose expansion depends on usable power and how much useful computation they can produce from each megawatt." />
+  <link rel="stylesheet" type="text/css" href="/theme/tufte-css/tufte.css" />
+  <link rel="stylesheet" type="text/css" href="/theme/css/main.css" />
+  <link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png" />
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <link rel="mask-icon" href="/favicon.svg" color="black" />
+
+  <meta property="og:title" content="The Energized Chip"/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:description" content="AI companies are becoming industrial firms whose expansion depends on usable power and how much useful computation they can produce from each megawatt."/>
+  <meta property="og:url" content="https://mariohsouto.github.io/essays/the-energized-chip.html"/>
+  <meta property="og:image" content="https://mariohsouto.github.io/images/energized-chip-og.jpg"/>
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="628"/>
+  <meta property="og:image:alt" content="The Energized Chip"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="The Energized Chip"/>
+  <meta name="twitter:description" content="AI companies are becoming industrial firms whose expansion depends on usable power and how much useful computation they can produce from each megawatt."/>
+  <meta name="twitter:image" content="https://mariohsouto.github.io/images/energized-chip-og.jpg"/>
+</head>
+
+<body>
+<header>
+  <h1 class="websitetitle"><a href="../"></a></h1>
+  <nav class="navmenu" id="navmenu">
+    <li><a class="navitemlink" href="../">About</a></li>
+    <li><a class="navitemlink" href="../essays.html">Essays</a></li>
+  </nav>
+</header>
+<article>
+  <figure class="essay-hero">
+    <img src="/images/energized-chip-hero.jpg" width="1600" height="837" loading="eager" alt="A transparent circuit board stands in a stone room, overlooking a desert of transmission lines, substations, and cooling towers." />
+  </figure>
+
+  <div class="essay-meta">October · 2026</div>
+  <h1>The Energized Chip</h1>
+
+  <p>In 1892, Wilhelm Ostwald proposed that everything that happens is fundamentally a change in energy. He called the theory <em>Energetik </em>and defended it for nearly two decades, holding that energy was more real than matter itself.<sup class="fn-ref"><a href="#fn1" id="fnref1">1</a></sup> In Energetik, chemistry, motion, heat, life, and perhaps thought were all transformations of a single underlying quantity. Despite its early traction, the theory lost to atomism. Atoms existed, and energy could not replace particles, fields, and mechanisms as an explanation of the world.</p>
+
+  <p>The theory failed as ontology, but its method survived. Complex systems can often be understood through the energy available to them, the forms into which that energy is converted, the constraints on that conversion, and the waste produced along the way. There is no need to follow every molecule inside a turbine to understand how much useful work it can produce, and the same is true of a battery, a chemical plant, or an electrical grid. Energy doesn’t explain the internal structure that makes a system work. It defines what the system can do within a given budget.</p>
+
+  <p>More than a century later, the leading AI companies have begun to describe their ambitions in much the same terms, measuring what they can build by the power they can secure. Elon Musk has argued that the future currency will essentially be wattage.<sup class="fn-ref"><a href="#fn2" id="fnref2">2</a></sup> Sam Altman asks what humanity might do with ten gigawatts of compute.<sup class="fn-ref"><a href="#fn3" id="fnref3">3</a></sup> Anthropic contracts the capacity to train and serve Claude in blocks measured not in GPUs but in gigawatts.<sup class="fn-ref"><a href="#fn4" id="fnref4">4</a></sup> NVIDIA is the most explicit: it describes the AI factory as a system that converts electricity into revenue-generating intelligence and measures its productivity in tokens per second per megawatt.<sup class="fn-ref"><a href="#fn5" id="fnref5">5</a></sup> As intelligence becomes something that can be produced repeatedly by machines, the industry now describes the capacity to produce it in the same language used for steel mills, chemical plants, and power stations.</p>
+
+  <p>The companies are right, and the implication runs deeper than the metaphor suggests. If intelligence is now produced at industrial scale, with the physical constraints that implies, then the AI company is becoming an industrial firm whose principal input is power. This essay is an attempt to follow the energy from the grid, through the facility, down to the chip, and back up to the economics of the firms being reorganized around it.</p>
+
+  <h2>A power problem</h2>
+
+  <p>Colossus 1, built by xAI and now contracted in full by Anthropic, has more than 220,000 NVIDIA GPUs and represents more than 300 megawatts of power capacity.<sup class="fn-ref"><a href="#fn6" id="fnref6">6</a></sup> Meta is building Prometheus as a one-gigawatt cluster and has described Hyperion as eventually reaching five gigawatts.<sup class="fn-ref"><a href="#fn7" id="fnref7">7</a></sup> OpenAI's Stargate program is organized around ten gigawatts of infrastructure.<sup class="fn-ref"><a href="#fn8" id="fnref8">8</a></sup> For scale, the Paducah uranium-enrichment plant in Kentucky, among the largest single electrical loads ever built in the United States, drew roughly three gigawatts at its Cold War peak. Some AI campuses now in development would exceed it.<sup class="fn-ref"><a href="#fn9" id="fnref9">9</a></sup></p>
+
+  <p>What the industry usually calls an energy problem is more precisely a power problem. A campus needs hundreds of megawatts of usable power, at a specific location and time, with the reliability and flexibility the workload needs. Electricity can be abundant across a grid and still scarce at the one substation where a campus needs it. There are two ways to ease that scarcity: new capacity, which expands the allocation, and coordination, which stretches how much computation an existing allocation can support.</p>
+
+  <p>The IEA estimates that the world's data centers collectively consumed roughly 415 terawatt-hours in 2024.<sup class="fn-ref"><a href="#fn10" id="fnref10">10</a></sup> Run at full power all year, Stargate's ten gigawatts alone would use more than a fifth of what the world's data centers consumed in 2024. This is why energy is becoming the binding constraint on the expansion of machine intelligence. Capital is available. Semiconductor production continues to grow. Algorithms diffuse rapidly. Firm power doesn’t scale in those ways.</p>
+
+  <p>Hundreds of megawatts cannot be copied, shipped overnight, or provisioned through an API. They must be generated, carried across a grid, and continuously balanced against every other load on the system. A delay in a transmission upgrade, transformer delivery, or interconnection study can leave billions of dollars of chips idle. Building an off-grid campus to bypass the interconnection queue doesn’t remove the problem. It transfers the problem to whoever operates the microgrid, with its own generators, storage, transformers, and controllers.</p>
+
+  <p>At the frontier, the scarce object is no longer the chip in isolation. It is the energized chip.</p>
+
+  <h2>Inside the data center</h2>
+
+  <p>Follow the megawatt through the fence line and it begins to divide. Some of it never reaches a chip: it runs the cooling, pumps, fans, power conversion, and lighting. The industry tracks this with power usage effectiveness (PUE), the ratio of total facility power to the power that reaches the computers. Lawrence Berkeley National Laboratory models about 1.14 for the newest AI-specialized facilities.<sup class="fn-ref"><a href="#fn11" id="fnref11">11</a></sup> The industry average is closer to 1.5, while the best operators run near 1.08.<sup class="fn-ref"><a href="#fn12" id="fnref12">12</a></sup> With overhead already below 10 percent at those sites, the building has little left to give. The larger gains now have to come from the machines inside it.</p>
+
+  <p>The thermal burden becomes more visible at rack scale. Hewlett Packard Enterprise rates its version of NVIDIA's GB200 NVL72 rack at 132 kilowatts, nearly all of which leaves as heat, most of it carried away by liquid.<sup class="fn-ref"><a href="#fn13" id="fnref13">13</a></sup> At these densities, thermal architecture is no longer a building service added after the computer is designed, but part of the computer itself.</p>
+
+  <h2>Inside the chip</h2>
+
+  <p>The same pattern repeats one level down. In frontier AI workloads, much of the energy inside a GPU goes to moving data rather than computing on it.</p>
+
+  <p>Bill Dally, NVIDIA's chief scientist, has made this argument for over a decade.<sup class="fn-ref"><a href="#fn14" id="fnref14">14</a></sup> A 32-bit floating-point multiplication on a seven-nanometer chip consumes roughly one picojoule. A single 64-bit access to HBM, the memory stacked alongside AI GPUs, consumes 250 to 450 picojoules in its input-output circuitry alone.<sup class="fn-ref"><a href="#fn15" id="fnref15">15</a></sup> Fetching an operand can therefore cost hundreds of times more energy than the arithmetic performed on it. Jeff Dean at Google has described the same physics from the TPU side: moving data from an accelerator's HBM to the processor can consume roughly a thousand times more energy than a single multiplication.<sup class="fn-ref"><a href="#fn16" id="fnref16">16</a></sup></p>
+
+  <p>NVIDIA's tokens-per-megawatt metric is therefore not primarily a measure of raw arithmetic. It also measures how efficiently the machine moves data. HBM stacks, interconnect fabric, memory hierarchy, and the placement of weights and activations determine how much useful work can be extracted from the megawatt.</p>
+
+  <p>This is where the engineering effort is concentrated, and it is working. Each hardware generation extracts meaningfully more tokens from the same electricity. The natural conclusion is that efficiency will eventually relieve the constraint. But I don't think it will.</p>
+
+  <p>A company that would not spend ten dollars to analyze every customer interaction may do so for ten cents. A scientist who could afford to test one hypothesis may test a million. An agent workflow that was uneconomical at last year's cost per token becomes routine this year. Each unit of intelligence becomes cheaper while the total quantity demanded grows faster. So far, efficiency has compounded demand rather than reduced it. Every picojoule saved inside the chip doesn’t relax the constraint at the fence line; it raises the value of the next megawatt brought through it.</p>
+
+  <h2>The shadow price of a megawatt</h2>
+
+  <p>If usable power limits how much a lab can produce, securing it stops being a procurement task and becomes a question of strategy. Other industries have been here before.</p>
+
+  <p>Airlines don’t organize themselves around jet fuel, even though it is one of their largest costs. They organize themselves around airport slots. Telecom companies organize around spectrum, semiconductor manufacturers around wafer capacity at the leading node, electricity markets around the transmission constraints reflected in locational marginal pricing. In each case, what shapes the firm isn’t its costliest input but the one it cannot buy in time, at any price. The scarcity of that input sets the value of everything else.</p>
+
+  <p>Economists have a name for this: the shadow price of a constraint, the amount by which output or profit would increase if one additional unit of the constrained resource were available. The constraints with the largest shadow prices identify a system's bottlenecks, because easing them produces the greatest improvement in performance. And shadow prices rank future bottlenecks, not just current ones.</p>
+
+  <p>When a single resource carries the highest shadow price for long enough, the firm begins reorganizing itself around securing it. The constraint stops being an operational problem and becomes the organizing principle of the business. Frontier AI is undergoing this transition. The industry is beginning to speak in megawatts rather than GPUs because power capacity has become the input whose shadow price now dominates the others.</p>
+
+  <p>Chips, capital, algorithms, and talent each have real frictions, but they can generally move across firms and regions faster than generation, transmission, and interconnection capacity can be built. That is what makes energy a binding constraint: not simply that it is expensive, but that it is inelastic on the timescale the industry needs. It is also why the fastest way to add usable power is often not to build it but to unlock it. Coordination across generation, storage, and compute, increasingly run by AI itself, can free capacity from existing connections in months, while new generation takes years.</p>
+
+  <p>This changes what a competitive advantage looks like. In a chip-constrained world, the company with the best access to advanced fabs captures the value. In an energy-constrained world, the company that can add gigawatts of firm power faster and at a lower marginal cost than its competitors captures the value.</p>
+
+  <h2>AI labs as factories</h2>
+
+  <p>Energy infrastructure is becoming part of the AI stack. Beneath the layers that used to define the industry (chips, networking, cloud systems, models, and applications) now sits another stack: generation, transmission, substations, transformers, cooling, batteries, and the software that coordinates them. Today, AI labs sign long-term power contracts, finance new generation, support nuclear restarts, buy gas turbines, reserve grid capacity years in advance, and design campuses around electricity that does not yet exist.</p>
+
+  <p>Meta has announced roughly six gigawatts across Prometheus and Hyperion, alongside nuclear agreements for as much as 6.6 gigawatts of new and existing capacity through 2035.<sup class="fn-ref"><a href="#fn17" id="fnref17">17</a></sup> AI labs are now helping decide which plants get financed, which reactors remain open, and where new generation is built.</p>
+
+  <p>Hyperscalers have signed long-term power contracts for more than a decade. What is new is the scale, the speed, and the willingness to take on construction and generation risk directly. An AI company does not have to become a regulated utility for the change to matter. It becomes an AI factory when energy development enters its production function: when it must choose generation technologies, finance projects, assume construction risk, secure interconnection rights, and coordinate the arrival of power with the arrival of chips.</p>
+
+  <p>The physical form of that factory is now visible on the ground, and Google's Goodnight campus in the Texas Panhandle shows it most completely. A buildout estimated at $29 billion pairs 531 megawatts of wind with a proposed 933-megawatt gas plant and roughly a gigawatt of batteries. Generation, storage, and computation are being planned as a single system. The pattern repeats elsewhere: at Colossus 2 in Memphis, xAI has installed roughly three gigawatt-hours of batteries, among the largest in the country, to absorb the power swings of training runs, and at GW Ranch in West Texas, Pacifico Energy, building for Amazon, holds what it calls the largest power-plant permit in the country, for 7.65 gigawatts of gas turbines.<sup class="fn-ref"><a href="#fn18" id="fnref18">18</a></sup> None of these is a data center with a power contract. Each is a power plant with a data center attached.</p>
+
+  <p>None was built by its tenant alone. Crusoe is building Goodnight for Google, Pacifico is building GW Ranch for Amazon, and Tesla supplied the batteries at Colossus 2. Taking on the energy problem has not meant building every part of the answer. Like any industrial firm, the AI factory is assembled from specialist suppliers.</p>
+
+  <p>Among the neoclouds I’ve been working with, the building happens at a speed with little precedent in industrial construction. Partners in power, networking, cooling, compute, and energy software are brought in from the first drawing, and the campus is designed as one machine around the electricity that can actually be delivered.</p>
+
+  <p>Models will improve. Chips will change. Architectures will be replaced. A permitted site with transmission access, firm generation, cooling capacity, and a path to several gigawatts can endure through all of them, which makes it the most durable asset an AI company can hold. How much useful work that site produces then depends on coordination, the argument I made in <a href="https://mariohsouto.github.io/essays/the-clay-jar-and-the-data-center.html"><em>The Clay Jar and the Data Center</em></a>.<sup class="fn-ref"><a href="#fn19" id="fnref19">19</a></sup></p>
+
+  <h2>The measure</h2>
+
+  <p>AI companies began as laboratories. The largest are becoming industrial systems that convert energy into intelligence, and their lasting advantage may come less from any single model or chip than from how quickly they can bring power online and how much useful cognition they can draw from each megawatt.</p>
+
+  <p>If this argument is right, it should show up in places that would look strange today. By 2027, I expect at least one independent frontier lab to register as a participant in a wholesale electricity market.<sup class="fn-ref"><a href="#fn20" id="fnref20">20</a></sup> Before 2028, I expect a frontier lab to say publicly that a model or product arrived late because the power did, not the chips. The labs least likely to say it will be the ones that treated the coordination of power and compute as part of the plant from the start. By 2030, I expect at least one frontier lab to spend more each year on power, sites, and facilities than on the chips inside them.<sup class="fn-ref"><a href="#fn21" id="fnref21">21</a></sup> Two things would prove me wrong: efficiency outrunning demand, or firm power becoming abundant sooner than expected. Neither looks likely on the timescale over which today's capital is being committed.</p>
+
+  <p>Which brings the argument back to Ostwald. He was wrong that energy is what the world is made of. But for systems that produce something, he was right about what energy is: the budget that defines how much a system can do, whatever the mechanism inside. For a century that method belonged to engines, plants, and grids. It now belongs to intelligence too. However capable the models become, each one runs on an energized chip, and there will only ever be as many of those as there are megawatts to feed them.</p>
+
+  <section class="references">
+    <h2>References</h2>
+    <ol>
+      <li id="fn1">Ostwald's first published statement of <em>Energetik</em>, <em>Studien zur Energetik II</em>, appeared in 1892, after he had begun formulating the theory around 1890 to 1891; and he defended the theory through the Lübeck congress debate of September 1895 and subsequent writings. See Robert J. Deltete, "Wilhelm Ostwald's Energetics," <em>Foundations of Chemistry </em>(2007). <a href="#fnref1" class="fn-back" aria-label="Back to reference 1">back</a></li>
+
+      <li id="fn2">Elon Musk, interviewed by Peter Diamandis, Moonshots podcast, January 2026. Musk framed wattage as "the future currency" in the context of AI compute buildout. Source. <a href="#fnref2" class="fn-back" aria-label="Back to reference 2">back</a></li>
+
+      <li id="fn3">Sam Altman, "Abundant Intelligence," blog.samaltman.com, September 23, 2025. Exact wording: "Maybe with 10 gigawatts of compute, AI can figure out how to cure cancer. Or with 10 gigawatts of compute, AI can figure out how to provide customized tutoring to every student on earth." Source. <a href="#fnref3" class="fn-back" aria-label="Back to reference 3">back</a></li>
+
+      <li id="fn4">Anthropic's compute agreements are now routinely denominated in gigawatts: up to 5 GW of Trainium capacity with Amazon (announced April 20, 2026), up to 5 GW of TPU capacity with Google and Broadcom (announced April 2026, deliveries beginning 2027), 2 GW of AMD MI450 GPUs (announced July 2026), and the full 300 MW capacity of xAI's Colossus 1 (announced May 2026). Source. <a href="#fnref4" class="fn-back" aria-label="Back to reference 4">back</a></li>
+
+      <li id="fn5">Jensen Huang has framed NVIDIA's positioning in these terms across multiple keynotes, notably GTC 2024 and GTC 2025. NVIDIA's "AI factory" concept and throughput per unit of power (tokens per second per megawatt) as a productivity metric appear throughout NVIDIA corporate communications from 2024 onward. Source. <a href="#fnref5" class="fn-back" aria-label="Back to reference 5">back</a></li>
+
+      <li id="fn6">SpaceX and Anthropic announced the Colossus 1 compute agreement on May 6, 2026. Cluster specifications: 220,000+ NVIDIA GPUs (mix of H100, H200, and GB200) and more than 300 MW of power capacity. Colossus 1 was built by xAI and transferred to SpaceX following the xAI-SpaceX merger in early 2026. Source. <a href="#fnref6" class="fn-back" aria-label="Back to reference 6">back</a></li>
+
+      <li id="fn7">Mark Zuckerberg announced Prometheus (one gigawatt, New Albany, Ohio) and Hyperion (scaling to five gigawatts, Louisiana) in July 2025. Prometheus is expected to come online in 2026. <a href="#fnref7" class="fn-back" aria-label="Back to reference 7">back</a></li>
+
+      <li id="fn8">The Stargate joint venture between OpenAI, SoftBank, and Oracle was announced January 21, 2025 with a $500 billion commitment and a 10-gigawatt target. Source. <a href="#fnref8" class="fn-back" aria-label="Back to reference 8">back</a></li>
+
+      <li id="fn9">The Paducah Gaseous Diffusion Plant in Kentucky drew approximately 3,000 MW at peak operation; enrichment ceased in 2013 (U.S. Department of Energy, Portsmouth/Paducah Project Office). Meta describes Hyperion as scaling to 5 GW; DOE has separately described up to 10 GW of planned data center development at the former Portsmouth enrichment site in Ohio. These are planned campus capacities rather than measured demand, and a campus with on-site generation may draw considerably less than its nameplate load through its grid connection. Source. <a href="#fnref9" class="fn-back" aria-label="Back to reference 9">back</a></li>
+
+      <li id="fn10">International Energy Agency, "Energy and AI," April 2025. The report estimates global data center electricity consumption at 415 TWh in 2024, or approximately 1.5% of global electricity consumption. Ten gigawatts operated continuously equals 87.6 TWh per year, about 21% of that total; the comparison treats the 10 GW as total facility power. Source. <a href="#fnref10" class="fn-back" aria-label="Back to reference 10">back</a></li>
+
+      <li id="fn11">Lawrence Berkeley National Laboratory, "2024 United States Data Center Energy Usage Report" (December 2024). LBNL models an aggregate PUE of approximately 1.14 for AI-specialized facilities and 1.22 for hyperscale facilities in 2023. Facility-level breakdowns of where non-IT power is consumed vary substantially by climate, cooling technology, and operational quality; the report emphasizes that no single set of percentages describes the industry as a whole. Source. <a href="#fnref11" class="fn-back" aria-label="Back to reference 11">back</a></li>
+
+      <li id="fn12">Industry-wide average PUE from the Uptime Institute Global Data Center Survey: 1.56 (2024), 1.54 (2025), 1.52 (2026). Fleet-wide operator figures: Google 1.09 (current trailing reporting; 1.10 for 2023 in its 2024 Environmental Report), Meta 1.08 (Meta Sustainability Report). An industry average does not describe the distribution of individual facilities. Operator-reported averages vary by facility, climate, and reporting methodology. Source. <a href="#fnref12" class="fn-back" aria-label="Back to reference 12">back</a></li>
+
+      <li id="fn13">Hewlett Packard Enterprise, "NVIDIA GB200 NVL72 by HPE" data sheet. The GB200 NVL72 rack is specified at 132 kW total, with 115 kW of thermal load carried by direct-to-chip liquid cooling and 17 kW by air cooling. These figures describe the partition of heat removal between cooling paths, not the electrical consumption of the cooling equipment itself. Source. <a href="#fnref13" class="fn-back" aria-label="Back to reference 13">back</a></li>
+
+      <li id="fn14">Dally has made this argument across many talks, including keynotes at Hot Chips 2013, ISC 2013, and Hot Chips 2023. The phrase "compute is free, data is priceless" is often attributed to him, but I could not locate a primary source for the exact words, so the argument is paraphrased here. <a href="#fnref14" class="fn-back" aria-label="Back to reference 14">back</a></li>
+
+      <li id="fn15">Energy figures per operation drawn from Norm Jouppi et al., "Ten Lessons From Three Generations Shaped Google's TPUv4i," <em>ISCA </em>2021, and Mark Horowitz, "Computing's Energy Problem (and what we can do about it)," <em>ISSCC </em>2014. FP32 at 7nm is measured at 1.31 pJ; HBM2 at 250-450 pJ and DDR3/4 at approximately 1,300 pJ, both per 64-bit access and counting input-output energy only. These are reference estimates rather than measurements of current-generation hardware. Logic energy improved roughly 3x between 45nm and 7nm process nodes; data movement energy has been substantially slower to improve. Source. <a href="#fnref15" class="fn-back" aria-label="Back to reference 15">back</a></li>
+
+      <li id="fn16">Jeff Dean, interviewed by Y Combinator (Root Access), 2026. Dean cited the roughly 1,000x energy ratio between HBM data movement and a single multiplication as central to Google's TPU design philosophy, and noted that batching exists largely to amortize that cost across many operations. Source. <a href="#fnref16" class="fn-back" aria-label="Back to reference 16">back</a></li>
+
+      <li id="fn17">Meta announced nuclear power agreements with TerraPower, Oklo, and Vistra on January 9, 2026, totaling up to 6.6 GW of new and existing capacity by 2035. The agreements supplement Meta's June 2025 20-year power purchase agreement with Constellation Energy for the Clinton Clean Energy Center in Illinois. Source. <a href="#fnref17" class="fn-back" aria-label="Back to reference 17">back</a></li>
+
+      <li id="fn18">Goodnight: Crusoe confirmed Google as the customer on September 28, 2026; the campus is planned at about 1,030 MW, and the $29 billion estimate comes from tax-abatement filings reviewed by Aterio. Wind comes from Goodnight 1 (265.5 MW, operating) and Goodnight 2 (265.5 MW, under construction). The 933 MW gas plant and roughly 1 GW of batteries appear in a January 2026 air permit application summarized by Cleanview; Google said in April 2026 that it had not signed a gas contract, so these describe a proposed design. Colossus 2: Canary Media counted about 720 Tesla Megapacks (roughly 2.8 GWh) in July 2026 satellite imagery, and an xAI representative cited 3.3 GWh in August; Tesla has described the Colossus batteries as smoothing training load (ERCOT Large Load Working Group, May 2025). For comparison, the Edwards and Sanborn facility in California is rated at 3.3 GWh. GW Ranch: Pacifico Energy holds the air permit for 7.65 GW of gas turbine nameplate capacity, which the permit describes as about 5 GW of nominal delivered output; Pacifico calls it the largest power project in the United States, with 1.8 GW of storage planned and first power targeted for 2027. DOE has separately announced at least 9.2 GW of gas generation at the Portsmouth site in Ohio. Source; Canary Media on Colossus 2; Pacifico Energy on GW Ranch. <a href="#fnref18" class="fn-back" aria-label="Back to reference 18">back</a></li>
+
+      <li id="fn19">Mario Souto, "<a href="https://mariohsouto.github.io/essays/the-clay-jar-and-the-data-center.html">The Clay Jar and the Data Center</a>," 2026. The essay argues that the missing operational layer between energy markets and compute workloads is the coordination software that jointly optimizes electricity prices, storage state, and workload scheduling at the point of use. <a href="#fnref19" class="fn-back" aria-label="Back to reference 19">back</a></li>
+
+      <li id="fn20">By this I mean registration as a market participant (for example, as a load resource or demand-response provider) and compensation for flexibility in compute load, not merely hedging or procurement. Amazon, Google, and Microsoft already trade power, and Meta applied to FERC for wholesale authority through its subsidiary Atem Energy in September 2025; the prediction concerns an independent lab rather than a hyperscaler. OpenAI was reported in August 2026 to be recruiting a power-trading lead, which points in this direction without meeting the test. Meta files to sell wholesale power (Data Center Dynamics). <a href="#fnref20" class="fn-back" aria-label="Back to reference 20">back</a></li>
+
+      <li id="fn21">Measured as annual spending on both, counting lease and power payments as they are paid, and sustained for two consecutive years so that a single year's chip-delivery timing cannot decide it. <a href="#fnref21" class="fn-back" aria-label="Back to reference 21">back</a></li>
+    </ol>
+  </section>
+</article>
+<footer>
+  <p>Powered by <a href="http://pelican.readthedocs.org">Pelican</a></p>
+</footer>
+</body>
+</html>

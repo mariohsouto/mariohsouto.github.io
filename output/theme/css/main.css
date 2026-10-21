@@ -133,6 +133,17 @@ a.navitemlink:hover { color: #555; }
               letter-spacing: 0.08em;
               margin-bottom: 1.4rem; }
 
+.essay-hero { max-width: none;
+               width: 75%;
+               margin: 0.5rem 0 2rem 0;
+               padding: 0; }
+
+.essay-hero img { display: block;
+                  width: 100%;
+                  height: auto; }
+
+@media screen and (max-width: 760px) { .essay-hero { width: 90%; } }
+
 sup.fn-ref { font-size: 0.75rem;
              line-height: 0;
              vertical-align: super;
